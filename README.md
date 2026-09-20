@@ -6,6 +6,8 @@ compares their output with a no-change baseline, and shows the results in a
 Streamlit dashboard. The app also shows company information, interactive price
 charts, and the limitations of forecasts based on technical data.
 
+[🚀 Open the Live Dashboard](https://stock-signal-lab-v1.streamlit.app/)
+
 ## What updates automatically
 
 After the one-time training step below, the app fetches the **latest available
