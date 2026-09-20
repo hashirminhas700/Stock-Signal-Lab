@@ -57,6 +57,7 @@ try:
         signals, history = latest_forecasts()
 except Exception as exc:
     FORECAST_ERROR = str(exc)
+    st.exception(exc)
     FORECAST_MODE = 'snapshot'
     # A dated local snapshot is a FALLBACK, not a newly calculated forecast.
     snapshot_dir = BASE if (BASE/'latest_signals.csv').is_file() else BASE/'demo_data'
