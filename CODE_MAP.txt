@@ -1,0 +1,24 @@
+CODE MAP — REAL STOCK ANALYZER PROJECT
+=====================================
+app.py                          Streamlit UI and charts.
+predict_latest.py               Latest available completed daily prices ->
+                                technical/relative features -> saved models ->
+                                new 5-day and 10-day forecast endpoints.
+Stock_Analyzer_Final_Model.ipynb FULL-DATA training and historical evaluation.
+                                Its LAST cell saves three model output files.
+requirements.txt                Python packages for notebook and dashboard.
+README.md                       Public project explanation, local setup and
+                                RAM-error fallback instructions using Colab.
+START_HERE.txt                  Short Windows setup instructions.
+models/                         Your three OWN generated files, not shipped:
+                                5d.joblib, 10d.joblib, universe.csv.
+data/                           Optional HISTORICAL summary statistics.
+
+If local notebook training runs out of RAM: upload the SAME .ipynb to Colab,
+run all cells, download all THREE outputs from Colab's models/ folder, and
+place them into THIS project's models/ folder beside app.py. Nothing needs
+to be pasted into VS Code. Colab is not guaranteed to have enough RAM.
+
+Personal has a more detailed PROJECT_EXPLAINED.txt and extra comments.
+Publish ONLY the real Stock Analyzer source, not the Personal folder or the
+.joblib files by default. GitHub does not itself run the Streamlit website.

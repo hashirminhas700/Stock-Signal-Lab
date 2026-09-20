@@ -1,0 +1,49 @@
+START HERE — REAL STOCK ANALYZER (WINDOWS)
+==========================================
+This is the REAL app for VS Code and GitHub. The Personal folder is OPTIONAL.
+The dashboard generates new DAILY forecasts from previously trained models.
+You do NOT need six old prediction CSVs for fresh forecasts.
+
+1. Open C:\Projects\Stock Analyzer in VS Code (File > Open Folder).
+2. Terminal > New Terminal. Run one command at a time:
+
+      py -m venv .venv
+      .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+
+3. Run Stock_Analyzer_Final_Model.ipynb ONCE, in VS Code with Microsoft's
+   Python and Jupyter extensions, using the .venv kernel. Training can require
+   more RAM than a 16 GB laptop has.
+
+   IF YOU GET MemoryError: stop the failed run. Keep the SAME FULL-DATA .ipynb.
+   Go to https://colab.research.google.com/ > Upload notebook > choose
+   THIS folder's Stock_Analyzer_Final_Model.ipynb > Run all cells. Colab is
+   NOT guaranteed enough RAM either; if it fails, resolve that error first.
+   Do not swap to the 100,000-row sampled notebook just to bypass the error.
+
+4. AFTER the final 'Save models' notebook cell succeeds, you must have THREE
+   files in the real project's models folder, BESIDE app.py:
+
+      C:\Projects\Stock Analyzer\models\5d.joblib
+      C:\Projects\Stock Analyzer\models\10d.joblib
+      C:\Projects\Stock Analyzer\models\universe.csv
+
+   If you used Colab: click its Files/folder icon, open models/, download all
+   THREE files separately if needed, and copy them to the Windows models/
+   folder above. DO NOT paste notebook code into VS Code or replace app.py.
+   Your original .ipynb remains in VS Code; only the three OUTPUT files move.
+
+5. Start the real app in the VS Code Terminal:
+
+      .\.venv\Scripts\python.exe -m streamlit run app.py
+
+   Visit the browser URL shown (usually http://localhost:8501). Keep the
+   terminal running; Ctrl+C stops it. Later you only need step 5.
+
+The forecast uses the latest available COMPLETED daily session, not an
+intraday, second-by-second ML prediction. If a Colab-trained model fails to
+load locally, share the exact error; Colab/local library versions may differ.
+
+For full setup and GitHub steps: see the separate SETUP_AND_GITHUB.txt located
+beside the TWO project folders. The public README.md also includes the Colab
+RAM fallback. Do not upload your Personal folder or trained model files by
+default.

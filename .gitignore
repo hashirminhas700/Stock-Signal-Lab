@@ -1,0 +1,31 @@
+# Private machine files and caches
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.pkl
+*.pickle
+.DS_Store
+# Large generated exports: keep on your computer initially. See README for demo deployment.
+/latest_signals.csv
+/price_history.csv
+/model_metrics.csv
+/confidence_deciles.csv
+/ensemble_weights.csv
+/prediction_history.csv
+
+# Personal artifacts and machine-specific files
+.env
+.env.*
+*.joblib
+*.pth
+*.log
+
+# Personal learning notes / local folders
+PROJECT_EXPLAINED.txt
+/Stock Analyzer Personal/
+
+.cache/
+sp500_raw_*.pkl
+# Saved model files are produced after training; review license, size and provenance before sharing.
+models/*.joblib
