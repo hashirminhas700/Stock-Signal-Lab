@@ -41,8 +41,12 @@ def load_evaluation():
         if path.is_file():
             return pd.read_csv(path, parse_dates=['Date'] if name=='predictions' else None)
         return pd.DataFrame(columns=columns or [])
-    return (read('metrics'), read('confidence'), read('weights'),
-            read('predictions', ['Ticker','Date','Horizon','Split','Correct_Direction']))
+    return (
+    read('metrics', ['Horizon', 'Split', 'Version']),
+    read('confidence', ['Horizon', 'Confidence_Decile', 'Direction Acc (%)']),
+    read('weights', ['Final Weight', 'Component', 'Horizon']),
+    read('predictions', ['Ticker', 'Date', 'Horizon', 'Split', 'Correct_Direction']),
+)
 
 metrics, confidence, weights, predictions = load_evaluation()
 
